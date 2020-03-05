@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WebServices.Views.BeerPage">
+    <ContentPage.Content>
+        <StackLayout Padding="0,20">
+            <Entry Placeholder="Insert the endpoint here"
+                   Text="{Binding BeerId}"/>
+                <Button Text="Search"
+                    Command="{Binding Search}"/>
+                <ListView ItemsSource="{Binding BeerIngedientInfo}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                <Label Text="Beer Id:" Style="{StaticResource LabelStyle}"/>
+                                <Label Text="{Binding Id}"/>
+                                <Label Text="Beer Name: " Style="{StaticResource LabelStyle}"/>
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="Beer Category: " Style="{StaticResource LabelStyle}"/>
+                                <Label Text="{Binding Category}"/>
+                                <Label Text="Beer Tags: " Style="{StaticResource LabelStyle}"/>
+                                <Label Text="{Binding CategoryDisplay}"/>
+                                <Label Text="Beer Creation Date: " Style="{StaticResource LabelStyle}"/>
+                                <Label Text="{Binding CreateDate}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

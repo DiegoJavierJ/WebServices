@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WebServices.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout Padding="0,20" Orientation="Vertical">
+            <Entry Placeholder="Insert the endpoint here"
+                   Text="{Binding BeerId}"/>
+            <Button Text="Search"
+                    Command="{Binding Search}"/>
+            <ListView ItemsSource="{Binding Prueba}" HorizontalOptions="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Id}"/>
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding YeastType}"/>
+                                <Label Text="{Binding AttenuationMin}"/>
+                                <Label Text="{Binding AttenuationMax}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
